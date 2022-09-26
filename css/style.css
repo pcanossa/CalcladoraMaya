@@ -1,0 +1,35 @@
+body {
+    font-family: "Ubuntu", "Helvetica";
+}
+
+.calculadora {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(191, 248, 229);
+    box-shadow: 2px 2px 2px rgba(0, 255, 30, 0.636);
+}
+
+.entrada {
+    max-width: 350px;
+    margin-top: 20px;
+}
+
+.convertido {
+    background-color: rgb(221, 221, 221);
+    padding: 15px;
+    border-radius: 154px;
+    box-shadow: 3px 3px 3px rgba(91, 118, 169, 0.636);
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(2, 43, 29);
+    font-size: x-large;
+    font-weight: bolder;
+}    
