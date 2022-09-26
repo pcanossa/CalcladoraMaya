@@ -1,9 +1,6 @@
 function pegaValor () {
     let numero = document.getElementById('converter').value;
     return numero;
-    $(document).ready(function() {
-        $('#convertido').empty();
-    });
 }
 
 
@@ -35,6 +32,9 @@ function converteValor () {
         
 
     }
+    $(document).ready(function() {
+        $('#convertido').empty();
+    });
 
     return algarismos;
 }
