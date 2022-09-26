@@ -1,55 +1,46 @@
-function calculaMaia (numero) {
-    let niveis = [];
-    let nivel;
-    let fatorado = numero;
-    while (fatorado!=0) {
-        if (fatorado < 20) {
-            let fator = fatorado;
-            niveis.push(fatorado);
-            fatorado -= fator;
-            console.log(fatorado, fator);
-        } else if (fatorado > 19 && fatorado < 399){
-            nivel = parseInt(fatorado / 20);
-            let fator = nivel * 20;
-            fatorado -= fator;
-            niveis.push(nivel);
-            if (fatorado == 0) {
-                niveis.push(0);
-            }
-            console.log(fatorado, fator, nivel);
-        } else if (fatorado > 399 && fatorado < 7999) {
-            nivel = parseInt(fatorado / 400);
-            let fator = nivel * 400;
-            fatorado -= fator;
-            niveis.push(nivel);
-            if (fatorado == 0) {
-                niveis.push(0,0);
-            }
-            console.log(fatorado, fator, nivel);
-        } else if (fatorado > 7999 && fatorado < 160000) {
-            nivel = parseInt(fatorado / 8000);
-            let fator = nivel * 8000;
-            fatorado -= fator;
-            niveis.push(nivel);
-            if (fatorado == 0) {
-                niveis.push(0,0,0);
-            }
-            console.log(fatorado, fator, nivel);
+function pegaValor () {
+    let numero = document.getElementById('converter').value;
+    return numero;
+    $(document).ready(function() {
+        $('#convertido').empty();
+    });
+}
+
+
+function converteValor () {
+    let numero = pegaValor();
+    let niveis = 0;
+    for (let i = 0; i < 100; i++) {
+        let divisaoVogesimal = parseInt(numero/20);
+        if (divisaoVogesimal > 0) {
+            niveis += 1;
         }
-        $(document).ready(function() {
-            $('#convertido').empty();
-        });
+        numero = divisaoVogesimal;
+        console.log(divisaoVogesimal, numero, niveis);
+    }
+    let algarismos = [];
+    niveis += 1;
+    numero = pegaValor();
+    console.log(numero, niveis);
+    for (let i = niveis; i > 0; i--) {
+        let tetoValor = i-1;
+        console.log(tetoValor);
+        let elevado = Math.pow(20, tetoValor);
+        let sobra = parseInt(numero/elevado);
+        console.log(sobra);
+        algarismos.push(sobra);
+        sobra = sobra*elevado;
+        numero -= sobra;
+        console.log(tetoValor, sobra, numero)
+        
+
     }
 
-    return niveis;
+    return algarismos;
 }
 
 function imprimeMaya () {
-    let valorGregoriano = document.getElementById('converter').value;
-    if (valorGregoriano > 159999) {
-        alert ("Essa Calculadora, por enquanto só converte até o Quarto nível (159999)")
-    } else {
-    let niveis = calculaMaia(valorGregoriano);
+    let niveis = converteValor();
 
         for (let i = 0; i < niveis.length; i++) {
             let valor = niveis[i];
@@ -58,5 +49,5 @@ function imprimeMaya () {
             });
             console.log(valor);
         }
-    }    
+    
 }
