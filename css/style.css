@@ -64,3 +64,28 @@ body {
 .img {
     text-align: center;
 }
+
+.explicacao {
+    text-align: center;
+    background-color: whitesmoke;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.explicanivel {
+    margin-bottom: 15px;
+}
+
+.calculosnivel {
+    margin-bottom: 15px;
+}
+
+.imagemalgarismos {
+    background-color: white;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 15px;
+}
