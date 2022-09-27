@@ -3,6 +3,10 @@ function converteValor () {
         $('#explicacao').empty();
     });
     var numero = document.getElementById('converter').value;
+    if (numero.length > 15) {
+        alert ("Aceito números com até 15 dígitos.");
+        return false;
+    } else {
     let num = numero;
     let niveis = 0;
     let contador = 0;
@@ -86,10 +90,14 @@ function converteValor () {
     });
 
     return algarismos;
+    }
 }
 
 function imprimeMaya () {
     let niveis = converteValor();
+    if (!niveis) {
+
+    }   else {
 
         for (let i = 0; i < niveis.length; i++) {
             let valor = niveis[i];
@@ -107,6 +115,6 @@ function imprimeMaya () {
                 $('.imagemalgarismos').append(img);
             });
         }
-
+    }    
     
 }
