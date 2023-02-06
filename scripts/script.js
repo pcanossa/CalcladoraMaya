@@ -110,7 +110,7 @@ function imprimeMaya () {
 
 
         for (let i = 0; i < niveis.length; i++) {
-            let img = `<img src='img/${niveis[i]}.png'>`
+            let img = `<img src='tree/master/img/${niveis[i]}.png'>`
             $(document).ready(function() {
                 $('.imagemalgarismos').append(img);
             });
